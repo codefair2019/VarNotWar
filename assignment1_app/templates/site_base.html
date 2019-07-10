@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+
+    <head>
+
+        <!-- General metadata and importing css style -->
+
+        {% block head %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> {% load static %}
+
+        {% comment %} local css and js files {% endcomment %}
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+        <script src="{% static '\stats.js' %}"></script>
+
+
+        {% comment %} bootstrap and font awesome css and js {% endcomment %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+        {% block scripts %}
+
+        {% endblock %}
+
+
+        <title>
+            {% block page_title %} Pretty Economcis Data {% endblock %}
+        </title>
+
+
+        {% endblock %}
+
+    </head>
+
+
+    <body>
+
+        {% block refresh %}
+
+        {% endblock %}
+
+
+        <header>
+
+            <!-- bootstrap and django site and navigation -->
+            <nav class="navbar sticky-top navbar-expand-sm navbar-light bg-light ">
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="{% url 'home' %}"> <img src="{% static '\Zone.png' %}" width="180"
+                        height="160" alt="My image" /></a>
+
+
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+
+                <!-- Navbar links -->
+                <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" onclick="myFunction()" href="#">ABS</a></li>
+
+                    </ul>
+                </div>
+
+            </nav>
+
+            {% comment %} image on click and duration test {% endcomment %}
+
+            <div class="loader" id="myModal">
+                <h1> Loading </h1>
+                <img src="{% static '\716.gif' %}" alt="loading bar">
+            </div>
+
+            <!--   site hero image   -->
+
+            <div class="jumbotron">
+                <h1 class="display-4">NT Economics Data</h1>
+                <p class="lead">Welcome to our page, our aim with this project is to take complex data and present it to
+                    citizens in an easy and digestable way.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.
+                </p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                </p>
+            </div>
+
+        </header>
+
+
+        <div class="container">
+
+            {% block section %}
+
+            {% endblock %}
+
+        </div>
+ 
+
+
+
+ 
+
+        <footer>
+            <address>© 2019 Matthew Heffernan, Karren Relora -- Site for educational use only!</address>
+        </footer>
+
+
+    </body>
+
+</html>

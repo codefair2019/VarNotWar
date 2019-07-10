@@ -1,0 +1,45 @@
+{% extends "site_base.html" %}
+{% load static %}
+
+{% block page_title %} ABS {% endblock %}
+
+
+{% block scripts %}
+
+<script>
+    window.onload
+</script>
+
+
+{% endblock %}
+
+<body>
+
+
+    {% block section %}
+
+
+    <table>
+
+        <th> {{observations}} </th>
+        {% for vendors in names %}
+
+        <tr>
+            <!-- <td style="text-align: center;">{{observations}}</td> -->
+            <td style="text-align: center;">{{vendors}}</td>
+        </tr>
+
+        {% endfor %}
+
+        </div>
+
+    </table>
+
+
+
+
+    {% endblock %}
+
+
+
+</body>
